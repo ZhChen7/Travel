@@ -88,6 +88,8 @@ export default{
 	padding-bottom: 50%
 	// padding-bottom: 100%
 	// background: green
+.icons
+    margin-top: .2rem   
 .icon
 	position: relative
 	overflow: hidden
