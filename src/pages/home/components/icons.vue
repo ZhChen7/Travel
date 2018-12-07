@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
-		<swiper :options="swiperOption" >
-            <swiper-slide v-for="(page,index) in pages":key="index">
+		<swiper :options="swiperOption" v-if="showSwiper">
+            <swiper-slide v-for="(page,index) in pages" :key="index">
 				<div class="icon" v-for="item in page" :key="item.id" >
 					 <div class="icon-img">
 					  <img class="icon-imgcontent" :src="item.imgUrl" >
@@ -17,55 +17,21 @@
 <script>
 export default{
     name:'HomeIcons',
-    data(){
+    props:{
+        list:Array
+    },
+    data() {
     	return{
-			  swiperOption:{
-              pagination:'.swiper-  ',
-              loop:true
-			},
-    		iconList:[{
-    			id:'0001',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    			desc:'景点门票'
-    		},{
-    			id:'0002',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/f5/a963333e1fa802.png',
-    			desc:'当地好玩'
-    		},{
-    			id:'0003',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-    			desc:'自然风光'
-    		},{
-    			id:'0004',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1811/5e/c640ec3b7d7ae802.png',
-    			desc:'打卡圣地'
-    		},{
-    			id:'0005',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-    			desc:'全部娱乐'
-    		},{
-    			id:'0006',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1811/5e/c640ec3b7d7ae802.png',
-    			desc:'打卡圣地'
-    		},{
-    			id:'0007',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/f5/a963333e1fa802.png',
-    			desc:'当地好玩'
-    		},{
-    			id:'0008',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-    			desc:'景点门票'
-    		},{
-    			id:'0009',
-    			imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-    			desc:'自然风光'
-    		},]
+			swiperOption:{
+                 loop:true,
+                 autoplay:false
+               }
     	}
     },
     computed:{
     	pages (){
             const pages=[]
-            this.iconList.forEach((item,index)=>{
+              this.list.forEach((item,index)=>{
             	const page=Math.floor(index/8)
             	if(!pages[page]){
                    pages[page]=[]
@@ -73,6 +39,9 @@ export default{
             	pages[page].push(item)
             })
             return pages
+    	},
+    	showSwiper(){
+    		return this.list.length
     	}
     }
 }	
