@@ -1,18 +1,10 @@
 <template>
 	<div>
-<<<<<<< HEAD
 		<home-header :city="city"></home-header>
 		<home-swiper :list="SwiperList"></home-swiper>
 		<home-icons  :list="iconList"></home-icons>
 		<home-recommend :list="recommend"></home-recommend>
 		<home-weekend :list="weekend"></home-weekend>
-=======
-		<home-header></home-header>
-		<home-swiper></home-swiper>
-		<home-icons></home-icons>
-		<home-recommend></home-recommend>
-		<home-weekend></home-weekend>
->>>>>>> 0315c7856484394631d07fce92aaf1eb6a2c3402
 	</div>
 	
 </template>
@@ -24,11 +16,8 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
-<<<<<<< HEAD
 import axios from 'axios'
-=======
 
->>>>>>> 0315c7856484394631d07fce92aaf1eb6a2c3402
 export default{
 	name:'Home',
 	components:{
@@ -37,7 +26,6 @@ export default{
 		HomeIcons,
 		HomeRecommend,
 		HomeWeekend
-<<<<<<< HEAD
 	},
 	data () {
 		return {
@@ -67,8 +55,6 @@ export default{
 	},
 	mounted(){
          this.getHomeInfo()
-=======
->>>>>>> 0315c7856484394631d07fce92aaf1eb6a2c3402
 	}
 }	
 
