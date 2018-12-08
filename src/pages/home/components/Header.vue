@@ -37,7 +37,7 @@ export default{
 			color:#fff
 		}
 		.header-right
-			color: #211212
+			color: #fff
 			opacity:0.7
 			font-weight:400
 		.header-left{
@@ -58,7 +58,7 @@ export default{
 			background:#fff
 			border-radius:.1rem
 			color:#ccc
-		  	padding-left:.2rem
+		  	padding-left:.3rem
 		  } 
 		  .input-icon{
 		  	font-size:.26rem
