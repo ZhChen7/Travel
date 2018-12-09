@@ -41,7 +41,6 @@ export default {
     },
     handleBannerClose() {
       this.showGallary = false;
-      console.log("a");
     }
   }
 };
