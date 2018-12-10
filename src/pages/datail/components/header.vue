@@ -26,15 +26,19 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
+  deactivated() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   methods: {
     handleScroll() {
       //   console.log(document.documentElement.scrollTop);
+      // console.log("scroll");
       const top = document.documentElement.scrollTop;
       if (top > 60) {
-         let opacity = top / 140;
-         opacity = opacity > 1 ? 1 : opacity;
+        let opacity = top / 140;
+        opacity = opacity > 1 ? 1 : opacity;
         this.opacityStyle = {
-             opacity
+          opacity
         };
         this.showAbs = false;
       } else {
@@ -53,7 +57,7 @@ export default {
   left: 0.2rem;
   top: 0.2rem;
   width: 0.8rem;
-   height: 0.8rem;
+  height: 0.8rem;
   border-radius: 0.4rem;
   background: rgba(0, 0, 0, 0.8);
   text-align: center;
