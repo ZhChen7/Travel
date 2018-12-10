@@ -8,7 +8,6 @@
         <div class="iconfont header-back">&#xe624;</div>
       </router-link>
     </div>
-    <dir class="heightTop"></dir>
   </div>
 </template>
 
@@ -71,6 +70,7 @@ export default {
 }
 
 .header-fixed {
+  z-index :2
   position: fixed;
   top: 0;
   left: 0;
@@ -97,7 +97,4 @@ export default {
   color: #fff;
 }
 
-.heightTop {
-  height: 66rem;
-}
 </style>
